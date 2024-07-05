@@ -1,3 +1,4 @@
+
 /*css reset start */
 
 /* Eric Meyer's CSS Reset v2.0 | 20110126
@@ -90,6 +91,9 @@ table {
     position: relative;
     max-height: 100%;
     overflow: hidden;
+    display: flex;
+    align-items: end;
+
 }
 .sign-up-image-gradient-overlay {
     position: absolute;
@@ -160,6 +164,15 @@ table {
     padding: 0;
 }
 /*Classes end*/
+
+
+
+.sign-up-home-image-wrapper img {
+    height: auto;
+    object-fit: cover;
+}
+
+
 
 /*Elements start*/
 body {
