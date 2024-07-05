@@ -1,4 +1,3 @@
-
 /*css reset start */
 
 /* Eric Meyer's CSS Reset v2.0 | 20110126
@@ -57,9 +56,8 @@ table {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+    max-height: 100dvh;
+
 }
 .sign-up-home-content {
     position:relative;
@@ -90,6 +88,8 @@ table {
 }
 .sign-up-home-image-wrapper {
     position: relative;
+    max-height: 100%;
+    overflow: hidden;
 }
 .sign-up-image-gradient-overlay {
     position: absolute;
@@ -218,5 +218,8 @@ h1 {
     font-size: 1.25rem;
     font-weight: 700;
     color: #101828;
+}
+main {
+    overflow-x: hidden;
 }
 /*Elements end*/
