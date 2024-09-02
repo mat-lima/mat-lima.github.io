@@ -46,7 +46,9 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-
+* {
+    box-sizing: border-box;
+}
 /*css reset end */
 
 /*Classes start*/
@@ -57,6 +59,7 @@ table {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
     max-height: 100dvh;
 
 }
@@ -64,12 +67,12 @@ table {
     position:relative;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    height: 100%
+    align-items: center;
     width: 100%;
+    max-width: 32rem;
     padding: 1.5rem 1.5rem .5rem 1.5rem;
     gap: 1.5rem;
-    border-radius: 2rem;
+    border-radius: 2rem 2rem 0 0;
     margin-top: -2rem;
     background-color: #fff;
     z-index: 2;
@@ -89,11 +92,23 @@ table {
 }
 .sign-up-home-image-wrapper {
     position: relative;
-    max-height: 100%;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
     overflow: hidden;
     display: flex;
     align-items: end;
+    justify-content: center;
 
+}
+.sign-up-home-image-wrapper img {
+    height: 100%;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: bottom; /* Anchors the bottom of the image */
+    position: absolute;
+    bottom: 0; /* Keeps the image anchored to the bottom of the parent */
 }
 .sign-up-image-gradient-overlay {
     position: absolute;
@@ -115,10 +130,11 @@ table {
 }
 .chat-bubble-wrapper {
     position: absolute;
-    bottom: 2rem;
-    left:0;
-    right: 0;
-    max-width: 100%;
+    top: -172px;
+    left: auto;
+    right: auto;
+    width: 100%;
+    max-width: 32rem;
     display: flex;
     flex-direction: column;
     gap: .75rem;
@@ -135,7 +151,6 @@ table {
     border-radius: 2rem .5rem 2rem 2rem;
     background-color: #FFF;
     color: #344054;
-    padding: 1.25rem;
     margin-left: auto;
     margin-right: 0;
 }
@@ -163,14 +178,14 @@ table {
     border:none;
     padding: 0;
 }
+.sign-up-button-icon-wrapper, .sign-up-button-icon {
+    display: none;
+}
+.sign-up-h1 {
+    display: none;
+}
 /*Classes end*/
 
-
-
-.sign-up-home-image-wrapper img {
-    height: auto;
-    object-fit: cover;
-}
 
 
 
@@ -180,7 +195,7 @@ body {
     font-size: 1rem;
     line-height: 1.5rem;
     font-weight: medium;
-    max-width: 24.375rem;
+    max-width: auto;
     max-height: 100dvh;
     outline: solid 2px #bdbdbd;
     margin: auto;
@@ -234,5 +249,73 @@ h1 {
 }
 main {
     overflow-x: hidden;
+    height: 100dvh;
 }
 /*Elements end*/
+
+/*media queries*/
+@media screen and (min-width: 32rem) /*tablet*/{
+    .sign-up-home-image-wrapper {
+        position: absolute;
+    }
+    .sign-up-home-content  {
+        margin-top: auto;
+    }
+}
+
+@media screen and (min-width: 80rem) /*desktop*/{
+    html {
+        font-size: 14px;
+    }
+    .sign-up-home-image-wrapper {
+        position: absolute;
+    }
+    .sign-up-home-content  {
+        gap: .75rem;
+        width: auto;
+        padding-top: 1rem;
+    }
+    .sign-up-form-wrapper  {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+    }
+    .sign-up-button-icon {
+        display: block;
+        width: 2.75rem;
+        height: 2.75rem;
+        padding: 0;
+    }
+    .sign-up-button-icon img {
+        margin-top: 0.2rem;
+    }
+    .sign-up-button-wrapper, .sign-up-button {
+        display: none;
+    }
+    .sign-up-button-icon-wrapper, .sign-up-button-icon {
+        display: block;
+    }
+    .chat-bubble-wrapper {
+        top: -84px;
+        padding: 0 .75rem;
+        gap: .5rem;
+    }
+    .chat-bubble {
+        padding: .5rem 1rem;
+        font-size: .75rem;
+    }
+    .subtext {
+        font-size: .75rem;
+        max-width: 16rem;
+    }
+    .sign-up-h1 {
+        display: block;
+        font-size: .875rem;
+        font-weight: 600;
+        color: #101828;
+    }
+    .onboarding-flow-header img {
+        width: 8rem;
+    }
+}
